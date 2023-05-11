@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: test variables
-        runs: |
+        run: |
           echo "${github.event.client_payload.slash_command}"
       - name: checkout
         uses: actions/checkout@v3
