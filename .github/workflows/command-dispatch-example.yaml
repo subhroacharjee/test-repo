@@ -11,6 +11,6 @@ jobs:
       - name: command-dispatch
         uses: peter-evans/slash-command-dispatch@v3
         with: 
-          command: |
+          commands: |
             preview
           token: ${{ secret.GITHUB_TOKEN }}
