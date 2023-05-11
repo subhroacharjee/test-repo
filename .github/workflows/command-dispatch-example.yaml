@@ -15,5 +15,5 @@ jobs:
         with: 
           commands: |
             preview
-          token: ${{ secrets.GITHUB_TOKEN }}
-          permissions: none
+          token: ${{ secrets.TOKEN }}
+          permission: none
