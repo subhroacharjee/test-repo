@@ -13,4 +13,4 @@ jobs:
         with: 
           commands: |
             preview
-          token: ${{ secret.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
