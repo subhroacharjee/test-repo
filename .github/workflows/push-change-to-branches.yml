@@ -14,4 +14,4 @@ jobs:
           echo "MINOR=$MINOR_VERSION">> "$GITHUB_OUTPUT"
       - name: value
         run: |
-          echo ${{ steps.check-output.output }}
+          echo ${{ steps.check-output.output.MINOR }}
