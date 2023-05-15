@@ -1,7 +1,8 @@
 name: Push changes
 on: 
   - push
-permissions: write-all
+permissions:
+  repository-projects: write
 jobs:
   check:
     name: Release
