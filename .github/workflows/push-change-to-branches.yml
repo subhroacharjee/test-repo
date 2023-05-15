@@ -11,8 +11,7 @@ jobs:
         id: check_out_put
         run: |
           version="$(echo "1.4.3" | sed -E 's/(.[0-9]+){1}$/.x/')"
-          echo $version
-          echo "minor=$version"
+          echo "minor=$version" >> "$GITHUB_OUTPUT"
       - name: value
         run: |
           echo ${{steps.check_out_put.output}}
