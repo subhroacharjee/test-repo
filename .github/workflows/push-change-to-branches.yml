@@ -1,0 +1,15 @@
+name: Create and push latest changes to test-for-subhro and test-for-subhro-1 on release
+
+on:
+  - push
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branches:
+            - test-for-subhro
+            - test-for-subhro-1
