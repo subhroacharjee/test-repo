@@ -1,1 +1,16 @@
-
+name: Push changes
+on: 
+  - push
+jobs:
+  check:
+    name: Release
+    runs-on: ubuntu-lates
+    steps:
+      - uses: actions/checkout@v3
+      - name: check out put
+        id: check_out_put
+        run: |
+          echo "::set-output name=minorBranch::$(echo "1.4.3" | sed -E 's/(.[0-9]+){1}$/.x/')"
+      - name: value
+        run: |
+          echo "${{steps.check_out_put.output}}"
