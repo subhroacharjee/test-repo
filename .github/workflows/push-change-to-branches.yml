@@ -4,7 +4,7 @@ on:
 jobs:
   check:
     name: Release
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: check out put
