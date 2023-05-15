@@ -13,5 +13,7 @@ jobs:
           MINOR_VERSION=$(echo "1.4.3" | sed -E 's/(.[0-9]+){1}$/.x/')
           echo "MINOR=$MINOR_VERSION">> "$GITHUB_OUTPUT"
       - name: value
-        run: |
-          echo ${{ steps.check-output.outputs.MINOR }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          branch: ${{ steps.check-output.outputs.MINOR }}
