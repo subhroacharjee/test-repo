@@ -1,6 +1,8 @@
 name: Push changes
 on: 
   - push
+      - tags: 
+          - "*" 
 permissions: write-all
 jobs:
   check:
@@ -10,4 +12,4 @@ jobs:
       - uses: actions/checkout@v3
       - name: check github object
         run: |
-          echo "${GITHUB_REF#refs/tags/}"
+          echo "${{github.event.tag.name}}"
