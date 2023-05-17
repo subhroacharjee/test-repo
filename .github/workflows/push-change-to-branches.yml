@@ -1,6 +1,6 @@
 name: Push changes
 on: 
-  - push
+  - push:
       - tags: 
           - "*" 
 permissions: write-all
