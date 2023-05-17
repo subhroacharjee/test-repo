@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: check github object
+        env: 
+          REFL: ${{github.event.ref}}
         run: |
-          echo "${{github.ref_name}}\n"
-          echo "${{github.event.ref}}\n"
-          echo "$(${{github.ref_name}}##*/)"
+          echo "${{github.ref_name}}"
+          echo "${{github.event.ref}}"
+          echo "${REFL##*/}"
