@@ -1,8 +1,8 @@
 name: Push changes
 on: 
-  - push:
-      tags: 
-        - "**" 
+  push:
+     tags: 
+       - "**" 
 permissions: write-all
 jobs:
   check:
