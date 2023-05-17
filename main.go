@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"test-example/src/routes"
 
@@ -15,7 +16,7 @@ func main() {
 
 func run() error {
 	router := mux.NewRouter().StrictSlash(true)
-
+	fmt.Println("Test Change")
 	homeRouter := routes.HomeRoute()
 
 	for k, v := range homeRouter.GetRoutes() {
