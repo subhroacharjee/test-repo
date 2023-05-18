@@ -6,6 +6,6 @@ jobs:
   Teardown:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/check-out@v3
+      - uses: actions/check-out@v3
       - run: |
           cat text.txt
