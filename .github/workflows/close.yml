@@ -1,7 +1,7 @@
 name: Teardown
 on:
   pull_request: 
-    - types: [ closed ]
+     types: [ closed ]
 jobs:
   Teardown:
     runs-on: ubuntu-latest
