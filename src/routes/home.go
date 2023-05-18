@@ -2,6 +2,7 @@ package routes
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -10,6 +11,7 @@ func HomeRoute() *Routes {
 	routes.Initalize()
 
 	routes.SetRoute("/", func(res http.ResponseWriter, req *http.Request) {
+		fmt.Println("Hello world")
 		json.NewEncoder(res).Encode(map[string]string{
 			"hello": "world",
 		})
