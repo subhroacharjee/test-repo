@@ -1,0 +1,9 @@
+name: Teardown
+on:
+  pull_request: ['closed']
+jobs:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: action/check-out@v3
+    - run: |
+        cat text.txt
