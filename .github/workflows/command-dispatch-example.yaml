@@ -16,5 +16,5 @@ jobs:
           token: ${{ secrets.TOKEN }}
           permission: none
           static-args: |
-            pr=${{github.event.pull_request.number}}
-            sha=${{github.event.pull_request.head.sha}}
+            ${{github.event.pull_request.number}}
+            ${{github.event.pull_request.head.sha}}
