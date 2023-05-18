@@ -18,4 +18,5 @@ jobs:
             preview
           static-args: |
             production
-            pr=${{github.event.pull_request.number}}
+            pr=${{toJSON(github.event.pull_request)}}
+
