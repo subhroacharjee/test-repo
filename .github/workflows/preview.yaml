@@ -8,4 +8,4 @@ jobs:
     steps: 
       - name: test variables
         run: |
-          echo "${{toJSON(github.event.client_payload.slash_command)}}"
+          echo "${{toJSON(github.event.client_payload)}}"
