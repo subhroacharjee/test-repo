@@ -12,11 +12,15 @@ jobs:
       - uses: peter-evans/slash-command-dispatch@v3
         with: 
           token: ${{ secrets.TOKEN }}
-          commands: |
-            preview 
-          static-args: |
-            production
-            region=us-east-1
-          issue-type: pull-request
-          reaction: false
-
+          config: >
+            [
+              {
+                "command": "preview",
+                "permission": "none",
+                "issue_type": "pull-request",
+                "static_args": [
+                  "production"
+                  "region=yeet"
+                ]
+              }
+            ]
