@@ -16,7 +16,7 @@ jobs:
             [
               {
                 "command": "preview",
-                "permission": "write",
+                "permission": none,
                 "issue_type": "pull-request",
                 "static_args": [
                   "production"
