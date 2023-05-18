@@ -11,10 +11,13 @@ jobs:
       - name: command-dispatch
         uses: peter-evans/slash-command-dispatch@v3
         with: 
-          commands: |
-            preview
           token: ${{ secrets.TOKEN }}
           permission: none
+          commands: |
+            preview
           static-args: |
+            some=value
+            hello=yeet
+            lorem
             ${{github.event.pull_request.number}}
             ${{github.event.pull_request.head.sha}}
