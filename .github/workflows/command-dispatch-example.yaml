@@ -12,10 +12,7 @@ jobs:
         with: 
           token: ${{ secrets.TOKEN }}
           commands: |
-            preview
+            preview 
           static-args: |
-            some=value
-            hello=yeet
-            lorem
-            ${{github.event.pull_request.number}}
-            ${{github.event.pull_request.head.sha}}
+            production
+            region=us-east-1
