@@ -8,11 +8,9 @@ jobs:
   commandDispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: command-dispatch
-        uses: peter-evans/slash-command-dispatch@v3
+      - uses: peter-evans/slash-command-dispatch@v3
         with: 
           token: ${{ secrets.TOKEN }}
-          permission: none
           commands: |
             preview
           static-args: |
