@@ -1,6 +1,7 @@
 name: Teardown
 on:
-  pull_request: ['closed']
+  pull_request: 
+    - types: [ closed ]
 jobs:
   runs-on: ubuntu-latest
   steps:
