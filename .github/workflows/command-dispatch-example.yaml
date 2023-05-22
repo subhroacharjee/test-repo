@@ -20,3 +20,7 @@ jobs:
             production
       - run: |
           echo "some example text" >> text.txt
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          labels: preview-link
