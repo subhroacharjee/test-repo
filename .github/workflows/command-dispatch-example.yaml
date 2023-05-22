@@ -19,7 +19,7 @@ jobs:
           static-args: |
             production
       - run: |
-          echo "${{github_event_name}}"
+          echo "${{github.event_name}}"
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           github_token: ${{ secrets.TOKEN }}
