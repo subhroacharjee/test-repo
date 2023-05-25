@@ -13,6 +13,7 @@ jobs:
         with:
           tag: pr-${{ github.event.issue.number }}
           force_push_tag: true
+          github_token: ${{secrets.TOKEN}}
       - uses: peter-evans/slash-command-dispatch@v3
         with: 
           token: ${{ secrets.TOKEN }}
