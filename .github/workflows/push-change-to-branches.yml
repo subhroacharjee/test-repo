@@ -1,7 +1,7 @@
 name: Push changes
 on: 
   push:
-    tags: ["**"]
+    tags: ["!*"]
 permissions: write-all
 jobs:
   check:
@@ -16,9 +16,4 @@ jobs:
           echo "${{github.ref_name}}"
           echo "${{github.event.ref}}"
           echo "${REFL##*/}"
-      - uses: rickstaa/action-create-tag@v1
-        id: "tag_create"
-        with:
-          tag: "latest-${{github.sha}}"
-          message: "Preview test tag"
 
