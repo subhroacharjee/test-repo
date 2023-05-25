@@ -17,12 +17,15 @@ jobs:
           static-args: |
             production
       - run: |
-          echo "${{github.event_name}}"
+          echo "${{toJSON(github.event)}}"
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           github_token: ${{ secrets.TOKEN }}
           labels: preview-link
       - run: |
           git config --global url."https://subhroacharjee:${{secrets.TOKEN}}@github.com".insteadOf "https://github.com"
+          git config --local user.email ${{github.event.actor.email}}
+          git config --local user.name "${{github.event.actor.login}}"
+
           git tag -a pr-${{github.event.issue.number}} -m "Test tag"
           git push --follow-tags --force
