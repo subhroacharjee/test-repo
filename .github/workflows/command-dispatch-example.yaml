@@ -22,7 +22,7 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN }}
           labels: preview-link
-      - uses: rickstaa/action-create-tag@v1
+      - uses: actions-ecosystem/action-push-tag@v1
         with:
             tag: pr-${{ github.event.issue.number }}
-            force_push_tag: true
+            message: Release pr-${{ github.event.issue.number }}
