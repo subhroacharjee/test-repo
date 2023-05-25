@@ -1,5 +1,7 @@
 name: Push changes
-on: [push]
+on: 
+  push:
+    tags: ["**"]
 permissions: write-all
 jobs:
   check:
