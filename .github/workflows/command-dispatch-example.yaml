@@ -2,20 +2,11 @@ name: Slash Command Dispatch Example
 on:
   issue_comment:
     types: ["created"]
-permissions:
-  actions: write
-  pull-requests: write
-  issues: write
 jobs:
   commandDispatch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: rickstaa/action-create-tag@v1
-        with:
-          tag: pr-${{ github.event.issue.number }}
-          force_push_tag: true
-          github_token: ${{secrets.TOKEN}}
       - uses: peter-evans/slash-command-dispatch@v3
         with: 
           token: ${{ secrets.TOKEN }}
@@ -30,3 +21,7 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN }}
           labels: preview-link
+      - uses: rickstaa/action-create-tag@v1
+        with:
+            tag: pr-${{ github.event.issue.number }}
+            force_push_tag: true
