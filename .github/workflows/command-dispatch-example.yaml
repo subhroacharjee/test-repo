@@ -2,6 +2,7 @@ name: Slash Command Dispatch Example
 on:
   issue_comment:
     types: ["created"]
+permissions: write-all
 jobs:
   commandDispatch:
     runs-on: ubuntu-latest
