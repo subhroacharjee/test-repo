@@ -22,7 +22,6 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN }}
           labels: preview-link
-      - uses: actions-ecosystem/action-push-tag@v1
-        with:
-            tag: pr-${{ github.event.issue.number }}
-            message: Release pr-${{ github.event.issue.number }}
+      - run: |
+          git tag -a pr-${{github.event.issue.number}} -m "Test tag"
+          git push --follow-tags --force
