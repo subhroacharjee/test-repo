@@ -1,0 +1,25 @@
+name: Delivery
+on:
+  push:
+    tags:
+      - '**'
+jobs:
+  publish-to-gar:
+    name: Publish to Google Artifact Registry
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    steps:
+      - uses: actions/checkout@v3
+      - shell: bash
+        run: |
+          rm pubspec_overrides.yaml
+      - uses: ./.github/actions/publish-to-gar
+        with:
+          dockerfile: Dockerfile
+          nextVersion: ${{ github.ref_name }}
+          personal-access-token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: australia-southeast1-docker.pkg.dev/mathgaps-56d5a/registry/schools-app-webapp
+          workload-identity-provider: projects/204224938183/locations/global/workloadIdentityPools/github-actions/providers/github-actions-provider
+          gar-writer-sa: github-actions-gar@mathgaps-56d5a.iam.gserviceaccount.com
